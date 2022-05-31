@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Image from './Image.jsx';
 import axios from 'axios';
 import '../styles/app.scss';
+import Header from './Header.jsx';
 
 const App = () => {
   const URL = 'https://api.thecatapi.com/v1/images/search/?limit=15&mime_types=jpg,png';
@@ -23,9 +25,12 @@ const App = () => {
   }, []);
 
   return (
-    <div className='container'>
-      {cats !== null ? cats.map((cat) => <img className='cat' src={cat.url} />) : 'Loading...'}
-    </div>
+    <div>
+      <Header className='header'/>
+      <div className='container'>
+        {cats !== null ? cats.map((cat) => <Image src={cat.url} className='cat' alt='cat' />) : 'Loading...'}
+      </div>
+    </div >
   );
 };
 
