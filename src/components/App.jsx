@@ -3,6 +3,7 @@ import Image from './Image.jsx';
 import axios from 'axios';
 import '../styles/app.scss';
 import Header from './Header.jsx';
+import Spinner from './Spinner.jsx';
 
 const App = () => {
   const URL = 'https://api.thecatapi.com/v1/images/search/?limit=15&mime_types=jpg,png';
@@ -26,9 +27,11 @@ const App = () => {
 
   return (
     <div>
-      <Header className='header'/>
+      <Header className='header' />
       <div className='container'>
-        {cats !== null ? cats.map((cat) => <Image src={cat.url} className='cat' alt='cat' />) : 'Loading...'}
+        {cats !== null ?
+          cats.map((cat) => <Image src={cat.url} className='cat' alt='cat' key={Math.random()} />) :
+          <Spinner/>}
       </div>
     </div >
   );
