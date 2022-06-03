@@ -1,10 +1,14 @@
 import React from 'react';
 
-const Image = ({ src, className, alt }) => {
+const Image = ({ src, alt }) => {
+
+  function clickHandler(){
+    console.log('click');
+  }
 
   return (
-    <div>
-      <img className={className} src={src} alt={alt} />
+    <div className='cat-image'>
+      <img className='cat' onClick={clickHandler} src={src} alt={alt} />
     </div>
   );
 };

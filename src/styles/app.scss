@@ -29,12 +29,7 @@ img {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 48px 48px;
 
-  .cat {
-    width: 225px;
-    height: 225px;
-    background-color: grey;
-    transition: all .2s;
-  }
+
 }
 
 .header {
@@ -63,6 +58,33 @@ img {
 .header__item_active {
   color: #fff;
   background-color: #1e88e5;
+}
+
+.cat-image {
+  position: relative;
+}
+.cat {
+  width: 225px;
+  height: 225px;
+  background-color: grey;
+  transition: all .2s;
+}
+.cat-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px;
+  background-image: url('../images/heart.svg');
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: all .2s;
+}
+.cat-image:hover::after {
+  opacity: 1;
 }
 
 .header__item:hover {
