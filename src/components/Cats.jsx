@@ -21,8 +21,6 @@ const Cats = () => {
     setCats(response.data);
   }
 
-  
-
   useEffect(() => {
     fetchData();
   }, []);
