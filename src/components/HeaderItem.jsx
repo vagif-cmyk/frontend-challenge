@@ -1,9 +1,9 @@
 import React from 'react';
 
-const HeaderItem = ({ className, text }) => {
+const HeaderItem = ({ showFavoriteCats, showAllCats, className, text }) => {
 
   return (
-    <li className={className}>
+    <li onClick={showFavoriteCats ? showFavoriteCats : showAllCats} className={className}>
       {text}
     </li>
   );

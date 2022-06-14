@@ -1,11 +1,10 @@
 import React from 'react';
 import HeaderList from './HeaderList.jsx';
 
-const Header = ({ className }) => {
-
+const Header = ({ showFavoriteCats, showAllCats, className }) => {
   return (
     <header className={className} >
-      <HeaderList className='header__list'/>
+      <HeaderList showFavoriteCats={showFavoriteCats} showAllCats={showAllCats} className='header__list' />
     </header>
   );
 };
