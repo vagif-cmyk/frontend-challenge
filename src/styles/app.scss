@@ -96,6 +96,24 @@ img {
   box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
 
 }
+.warning {
+  position: absolute;
+  right: 100px;
+  z-index: 1000;
+  padding: 40px;
+  border: 1px solid green;
+  border-radius: 10px;
+  font-size: 1.2em;
+  background-color: #ffbc00;
+  opacity: 1;
+  transform: translate(0);
+  transition: all .3s ;
+}
+.op-0{
+  opacity: 0;
+  transform: translate(110%);
+  transition: all .3s ;
+}
 
 //preloader
 .preloader {

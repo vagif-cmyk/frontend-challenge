@@ -7,20 +7,20 @@ const Image = ({ src, alt }) => {
   const [heart, setHeart] = useState(<HeartSVG />);
 
   function clickHandler() {
-    const catsUrl = localStorage.getItem('cat') !== null
-      ? JSON.parse(localStorage.getItem('cat'))
+    const catsUrl = localStorage.getItem('cats') !== null
+      ? JSON.parse(localStorage.getItem('cats'))
       : [];
 
     if (heart.type.name === 'HeartSVG') {
       setHeart(<HeartRedSVG />);
 
-      localStorage.setItem('cat', JSON.stringify([...catsUrl, src]));
+      localStorage.setItem('cats', JSON.stringify([...catsUrl, src]));
     } 
     
     else if (heart.type.name === 'HeartRedSVG') {
       setHeart(<HeartSVG />);
       catsUrl.splice(catsUrl.indexOf(src), 1)
-      localStorage.setItem('cat', JSON.stringify(catsUrl));
+      localStorage.setItem('cats', JSON.stringify(catsUrl));
     }
   }
 
